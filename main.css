@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+@font-face{font-family:prox; src: url(../fonts/Proxima.otf);}
+@font-face{font-family:znik; src: url(../fonts/Znikomit.otf);}
+@font-face{font-family:futura; src: url(../fonts/Futura.ttf);}
+    
+header {
+    margin-top: .5em;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #DBDBEA;
+    border-bottom: 1px solid #DBDBEA;
+}
+
+.bars {
+    flex:0 0 3em;
+    height: 3em;
+    text-align: center;
+    border-right: 1px solid #DBDBEA;
+}
+.bars i {width:1.5em; line-height: 3em; cursor:pointer; color:grey;}
+
+h1 {
+    flex:1 0 50%;
+    height: 2.4em;
+    text-align: center;
+    line-height:2.4em; 
+    font-family: znik;
+    font-size: 20px;
+}
+h3 {
+    display: none;
+}
+
+.search {
+    flex:0 0 3em;
+    height: 3em;
+    text-align: center;
+    border-left: 1px solid #DBDBEA;
+}
+.search i {width:1.5em; line-height: 3em; cursor:pointer; color:grey;}
+
+.touch {
+    flex: 0 0 100%;
+    height: 2em;
+    text-align:right;
+}
+.touch span {line-height:3em; padding-right:2em; font-family:prox; font-size:11px; color:#D90000;}
+
+main {
+/*    outline: 1px orange solid;*/
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+.img {
+    width: 100%;
+}
+
+.text_over {
+    width: 20%;
+    min-width: 8em;
+    height: 1.7em;
+    position: absolute;
+    top:3.8em;
+    text-align: center;
+    background-color: white;
+}
+.text_over span {line-height:2.1em; font-family:futura; font-size:14px;}
+
+.tiles {
+    display: flex;
+    flex-direction: row;
+    height: 8em;
+    margin: 30px 15px 0 15px; 
+    border-bottom: 1px solid #B9B9C8;
+}
+.tile_text {margin-left: .8em; line-height: 26px; font-family: prox; font-size: 18px;}
+.img_tile {
+    width: 7em;
+}
+
+.more {
+    height: 1.2em;
+    margin: 1em 1em 3em 1em;
+    padding: 1px 10px 1px 10px;
+    text-align: center;
+    background-color: #f5f5f5;;
+}
+.more span {line-height: 1.2em; font-family: prox; font-size: 12px;}
+
+
+@media only screen and (min-width : 48em) { /*for tablet - inclusive*/
+
+    header {
+        height: 3.4em;
+        margin-top: 1em;
+        border-bottom:0;
+    }
+    .bars {
+        margin-left: 2em;
+        border-right:0;
+        font-size: 22px;
+    }
+
+    h1 {
+        flex:1 0 35%;
+        height: 2em;
+        text-align: left;
+        line-height:2em; 
+        font-size: 30px;
+    }
+    h3 {
+        display: inline;
+    }
+    .search {
+        flex:0 0 12em;
+        height: 1.5em;
+        margin: .5em 1.5em 0 0;
+        text-align: right;
+        border:1px solid #DBDBEA;
+        font-size: 22px;
+    }
+    .search i {line-height: 1.5em; color:white; background-color: black; text-align: center;}
+    .touch {
+        margin-left: 6.8em;
+        text-align:left;
+    }
+    .touch span {line-height:1em;}
+}
+
