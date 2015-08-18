@@ -6,7 +6,6 @@
 }
 @font-face{font-family:prox; src: url(../fonts/Proxima.otf);}
 @font-face{font-family:znik; src: url(../fonts/Znikomit.otf);}
-@font-face{font-family:futura; src: url(../fonts/Futura.ttf);}
     
 header {
     margin-top: .5em;
@@ -24,17 +23,15 @@ header {
 }
 .bars i {width:1.5em; line-height: 3em; cursor:pointer; color:grey;}
 
+.title {flex:1 0 50%;}
 h1 {
-    flex:1 0 50%;
     height: 2.4em;
     text-align: center;
     line-height:2.4em; 
     font-family: znik;
     font-size: 20px;
 }
-h3 {
-    display: none;
-}
+h3 {display: none;}
 
 .search {
     flex:0 0 3em;
@@ -52,7 +49,6 @@ h3 {
 .touch span {line-height:3em; padding-right:2em; font-family:prox; font-size:11px; color:#D90000;}
 
 main {
-/*    outline: 1px orange solid;*/
     display: flex;
     position: relative;
     flex-direction: column;
@@ -70,8 +66,11 @@ main {
     text-align: center;
     background-color: white;
 }
-.text_over span {line-height:2.1em; font-family:futura; font-size:14px;}
+.text_over span {line-height:2.1em; font-family:prox; font-size:14px;}
 
+.tile_wrapper {text-align: center;}
+.tile_wrapper span {display: none;}
+.tile_wrapper2 span{display: none;}
 .tiles {
     display: flex;
     flex-direction: row;
@@ -79,7 +78,8 @@ main {
     margin: 30px 15px 0 15px; 
     border-bottom: 1px solid #B9B9C8;
 }
-.tile_text {margin-left: .8em; line-height: 26px; font-family: prox; font-size: 18px;}
+.tile_text {margin-left: .8em; line-height: 26px; text-align:left; font-family: prox; font-size: 18px;}
+#hide {display: none;}
 .img_tile {
     width: 7em;
 }
@@ -91,10 +91,19 @@ main {
     text-align: center;
     background-color: #f5f5f5;;
 }
-.more span {line-height: 1.2em; font-family: prox; font-size: 12px;}
+.more span {display: block; line-height: 1.9em; font-family: prox; font-size: 11px;}
 
 
-@media only screen and (min-width : 48em) { /*for tablet - inclusive*/
+
+
+
+/*for tablet - inclusive*/
+
+
+
+
+
+@media only screen and (min-width : 48em) { 
 
     header {
         height: 3.4em;
@@ -106,16 +115,24 @@ main {
         border-right:0;
         font-size: 22px;
     }
-
+    
+    .title {
+        display: inline;
+        flex: 1 0 30%;
+    }
     h1 {
         flex:1 0 35%;
         height: 2em;
+        display: inline;
         text-align: left;
         line-height:2em; 
         font-size: 30px;
     }
     h3 {
         display: inline;
+        margin-left: 1em;
+        font-family: prox;
+        font-size: 10px;
     }
     .search {
         flex:0 0 12em;
@@ -131,5 +148,42 @@ main {
         text-align:left;
     }
     .touch span {line-height:1em;}
+    
+    .img_place:nth-of-type(2) {
+        margin-bottom: 3em;
+    }
+    .text_over {
+        display: none;
+    }
+    
+    main {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    }
+    
+    .tile_mega_wrapper {display: flex}
+    .tile_wrapper {flex:1 0 35%;}
+    .tile_wrapper2 {
+        flex: 1 0 40%;
+        position: relative;
+        margin-left: 3em;
+        padding:0 2em 0 3em;
+        text-align: center;
+        background-image: linear-gradient(to bottom, #333 20%, rgba(255, 255, 255, 0) 0%);
+        background-position: left;
+        background-size: 1px 10px;
+        background-repeat: repeat-y;
+    }
+    .tile_wrapper span {display: block; margin-bottom: 40px; font-family:prox; font-size:26px;}
+    .tile_wrapper2 span {display: block; margin-bottom: 30px; font-family:prox; font-size:26px;}
+    .tiles {
+        margin: 30px 15px 0 15px; 
+    }
+    .tile_text {margin-left: .8em; line-height: 1.3em; font-family: prox; font-size: 14px;}
+    #hide {display: flex;}
+    .img_tile {
+        width: 7em;
+    }
+    .more span {font-size: 11px;}
 }
-
